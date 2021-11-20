@@ -1,0 +1,11 @@
+name: buffered_list_stream
+description: Buffer a [Stream<List<T>>]. Useful for IO operations.
+version: 1.0.0
+homepage: https://github.com/mgenware/buffered_list_stream
+
+environment:
+  sdk: ">=2.13.0 <3.0.0"
+
+dev_dependencies:
+  mgenware_dart_lints: ^1.0.0
+  test: ^1.16.0
