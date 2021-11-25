@@ -1,4 +1,4 @@
-import 'package:buffered_list_stream/src/buffered_list_stream.dart';
+import 'package:buffered_list_stream/buffered_list_stream.dart';
 
 Stream<List<int>> getStream() async* {
   yield [1, 2];
@@ -9,7 +9,8 @@ Stream<List<int>> getStream() async* {
 }
 
 void main() async {
-  await for (var chunk in bufferedListStream(getStream(), 3)) {
+  var bufferedString = bufferedListStream(getStream(), 3);
+  await for (var chunk in bufferedString) {
     // ignore: avoid_print
     print(chunk);
   }
