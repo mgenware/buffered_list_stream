@@ -19,25 +19,32 @@ Future<List<List<int>>> t(int size) async {
 void main() {
   test('Tiny size', () async {
     expect(await t(1), [
-      [1, 2, 3],
+      [1],
+      [2],
+      [3],
       [4],
-      [5, 6],
-      [7, 8, 9]
+      [5],
+      [6],
+      [7],
+      [8],
+      [9]
     ]);
   });
 
   test('Small size', () async {
     expect(await t(2), [
-      [1, 2, 3],
-      [4, 5, 6],
-      [7, 8, 9]
+      [1, 2],
+      [3, 4],
+      [5, 6],
+      [7, 8],
+      [9]
     ]);
   });
 
   test('Large size', () async {
     expect(await t(5), [
-      [1, 2, 3, 4, 5, 6],
-      [7, 8, 9]
+      [1, 2, 3, 4, 5],
+      [6, 7, 8, 9]
     ]);
   });
 
