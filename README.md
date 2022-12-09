@@ -7,7 +7,7 @@ Buffer a `Stream<List<T>>`. Useful for IO operations.
 
 Install and import this package:
 
-```sh
+```dart
 import 'package:buffered_list_stream/buffered_list_stream.dart';
 ```
 
@@ -23,16 +23,17 @@ Stream<List<int>> getStream() async* {
 }
 
 void main() async {
-  var bufferedString = bufferedListStream(getStream(), 3);
-  await for (var chunk in bufferedString) {
+  // Create a buffered stream of size 3.
+  var bufferedStream = bufferedListStream(getStream(), 3);
+  await for (var chunk in bufferedStream) {
     // ignore: avoid_print
     print(chunk);
   }
   /**
     [1, 2, 3]
-    [4, 5, 6, 7]
-    [8, 9, 10]
+    [4, 5, 6]
+    [7, 8, 9]
+    [10]
    */
 }
-
 ```

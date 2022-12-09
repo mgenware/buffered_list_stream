@@ -4,9 +4,13 @@ Stream<List<T>> bufferedListStream<T>(
   List<T> buffer = [];
   await for (var data in stream) {
     buffer.addAll(data);
-    if (buffer.length >= bufferSize) {
-      yield buffer;
-      buffer = [];
+
+    while (buffer.length > bufferSize) {
+      var part1 = buffer.sublist(0, bufferSize);
+      var part2 = buffer.sublist(bufferSize);
+
+      yield part1;
+      buffer = part2;
     }
   }
   if (buffer.isNotEmpty) {
