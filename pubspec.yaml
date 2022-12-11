@@ -1,5 +1,5 @@
 name: buffered_list_stream
-description: Buffer a [Stream<List<T>>]. Useful for IO operations.
+description: Creates a buffered stream from `Stream<T>` or `Stream<List<T>>`.
 version: 1.2.0
 homepage: https://github.com/mgenware/buffered_list_stream
 
